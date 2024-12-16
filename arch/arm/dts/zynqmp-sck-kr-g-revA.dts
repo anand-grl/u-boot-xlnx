@@ -163,8 +163,8 @@
 	status = "okay";
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_usb1_default>;
-	phy-names = "usb3-phy";
-	phys = <&psgtr 3 PHY_TYPE_USB3 1 2>;
+	phy-names = "usb2-phy";
+	phys = <&psgtr 3 PHY_TYPE_USB2 1 2>;
 	reset-gpios = <&slg7xl45106 1 GPIO_ACTIVE_LOW>;
 	assigned-clock-rates = <250000000>, <20000000>;
 
@@ -177,9 +177,9 @@
 
 &dwc3_1 {
 	status = "okay";
-	dr_mode = "host";
+	dr_mode = "peripheral";
 	snps,usb3_lpm_capable;
-	maximum-speed = "super-speed";
+	maximum-speed = "high-speed";
 };
 
 &gem0 { /* mdio mio50/51 */
