@@ -168,9 +168,6 @@
 	reset-gpios = <&slg7xl45106 1 GPIO_ACTIVE_LOW>;
 	assigned-clock-rates = <250000000>, <20000000>;
 
-	dr_mode = "otg";
-	usb-role-switch;
-
 	usbhub1: usb-hub { /* u84 */
 		i2c-bus = <&usbhub_i2c1>;
 		compatible = "microchip,usb5744";
@@ -180,6 +177,7 @@
 
 &dwc3_1 {
 	status = "okay";
+	dr_mode = "peripheral";
 	snps,usb3_lpm_capable;
 	maximum-speed = "super-speed";
 };
