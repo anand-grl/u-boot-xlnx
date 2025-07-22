@@ -177,8 +177,8 @@
 
 &dwc3_1 {
 	status = "okay";
-	dr_mode = "otg";
-	usb-role-switch;
+	dr_mode = "peripheral";
+	/* usb-role-switch; */
 	snps,usb3_lpm_capable;
 	maximum-speed = "super-speed";
 };
