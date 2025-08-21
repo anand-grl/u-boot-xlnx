@@ -185,7 +185,7 @@
 };
 
 &gem0 { /* mdio mio50/51 */
-	status = "okay";
+	status = "disabled"; //21,Aug'2025,Kannan: this phy address is not present
 	phys = <&psgtr 0 PHY_TYPE_SGMII 0 0>;
 	phy-handle = <&phy0>;
 	phy-mode = "sgmii";
