@@ -180,8 +180,17 @@
 	status = "okay";
 	dr_mode = "otg";
 	usb-role-switch;
-	//snps,usb3_lpm_capable;
+	snps,usb3_lpm_capable;
 	maximum-speed = "super-speed";
+};
+
+&gem0 { /* mdio mio50/51 */
+	status = "disabled"; //21,Aug'2025,Kannan: this phy address is not present
+	phys = <&psgtr 0 PHY_TYPE_SGMII 0 0>;
+	phy-handle = <&phy0>;
+	phy-mode = "sgmii";
+	is-internal-pcspma;
+	assigned-clock-rates = <250000000>;
 };
 
 &gem1 { /* mdio mio50/51, gem mio38 - mio49 */
@@ -196,6 +205,7 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 		phy1: ethernet-phy@8 { /* u36 */
+			status = "disabled"; //21,Aug'2025,Kannan: this phy address is not present
 			#phy-cells = <1>;
 			compatible = "ethernet-phy-id2000.a231";
 			reg = <8>;
