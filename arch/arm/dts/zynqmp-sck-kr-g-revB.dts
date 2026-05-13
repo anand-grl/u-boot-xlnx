@@ -180,7 +180,7 @@
 	status = "okay";
 	dr_mode = "otg";
 	usb-role-switch;
-	role-switch-default-mode = "host";
+	role-switch-default-mode = "peripheral";
 	snps,usb3_lpm_capable;
 	maximum-speed = "super-speed";
 };
